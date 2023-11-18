@@ -1,10 +1,12 @@
 ﻿namespace ElNotebook.Models
 {
-    public class Student: User
+    public class Student
     {
+        public int Id { get; set; }
         public int? TotalCountOFhours { get; set; }
         public int? NumberGroup { get; set; }
-        public List<Cource>? CourcesActive { get; set; } = new();
-        public List<Cource>? CourcesClosed { get; set; } = new();
+        public List<Course> Courses { get; set; } = new();
+        public List<StudentCoursesActivity> Activities { get; set; } = new();
+        public User? User { get; set; }   
     }
 }

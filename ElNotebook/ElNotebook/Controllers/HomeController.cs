@@ -1,5 +1,6 @@
 ﻿using ElNotebook.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ElNotebook.Controllers
@@ -10,9 +11,18 @@ namespace ElNotebook.Controllers
         public HomeController(ApplicationContext context)
         {
             db = context;
+
             
-            var c1 = new Cource { Name = "test1" };
-            var c2 = new Cource { Name = "test1" };
+            //s1.CourcesActive.Add(c1);
+            //s1.CourcesClosed.Add(c2);
+            //s2.CourcesActive.Add(c2);
+            //s2.CourcesClosed.Add(c1);
+           // db.Cources.AddRange(c1, c2);
+          //  db.Students.AddRange(s1, s2);
+            
+
+           
+            
         }
 
         public IActionResult Index()
