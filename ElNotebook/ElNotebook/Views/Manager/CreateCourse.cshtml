@@ -1,0 +1,30 @@
+﻿@model Course
+
+@{
+    ViewData["Title"] = "Create course page";
+}
+
+<div>
+    <h2>Добавление курса</h2>
+    <form asp-action="createcourse" asp-controller="manager">
+        <p>
+            <label asp-for="Name">Название курса</label><br />
+            <input type="text" asp-for="Name" />
+        </p>
+        <p>
+            <label asp-for="Author">Автор курса</label><br />
+            <input type="text" asp-for="Author" />
+        </p>
+        <p>
+            <label asp-for="CountOFhours">Количество часов</label><br />
+            <input type="number" asp-for="CountOFhours" />
+        </p>
+        <p>
+            <label asp-for="Description">Описание</label><br />
+            <input type="text" asp-for="Description" />
+        </p>
+        <p>
+            <input type="submit" value="Добавить" />
+        </p>
+    </form>
+</div>

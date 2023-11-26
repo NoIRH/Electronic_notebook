@@ -1,0 +1,23 @@
+﻿@model (List<Course>, Student)
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="cources_box">
+    <h2>Список курсов</h2>
+    <table class="table">
+        <tr><th>Название курса</th><th>Количество часов</th> <th></th><th></th></tr>
+        @foreach (var item in Model.Item1)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CountOFhours</td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="student_box">
+    здесь будут кнопки !)
+    добро пожаловать уважаемый @Model.Item2?.Name
+</div>

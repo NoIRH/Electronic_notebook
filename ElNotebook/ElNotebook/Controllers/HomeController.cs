@@ -1,7 +1,10 @@
 ﻿using ElNotebook.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace ElNotebook.Controllers
 {
@@ -12,22 +15,52 @@ namespace ElNotebook.Controllers
         {
             db = context;
 
-            
-            //s1.CourcesActive.Add(c1);
-            //s1.CourcesClosed.Add(c2);
-            //s2.CourcesActive.Add(c2);
-            //s2.CourcesClosed.Add(c1);
-           // db.Cources.AddRange(c1, c2);
-          //  db.Students.AddRange(s1, s2);
-            
-
-           
-            
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Reg()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> Reg(User user)
+        {
+            var u = db.Users.Find(user.Id); 
+            if (u == null && user != null && user.Name != null && user.Password !=  null)
+            {
+                user.Role = Roletype.Student;
+                db.Users.Add(user);
+                db.SaveChanges();
+                u = db.Users.Find(user.Id);
+                var st = new Student { Name = user.Name, UserId = u.Id };
+                db.Students.Add(st);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<ActionResult> Login(User user)
+        {
+            if (user == null) return RedirectToAction("Index");
+            var u = db.Users.FirstOrDefaultAsync(u => u.Name == user.Name && u.Password == user.Password).Result;
+            if (u == null ) return RedirectToAction("Index");
+            var claims = new List<Claim>
+            {
+                 new Claim(ClaimsIdentity.DefaultNameClaimType, u.Name),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, u.Role.ToString()),
+                new Claim(ClaimTypes.Surname, u.Id.ToString()),
+             };
+            var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
+            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+            await Request.HttpContext.SignInAsync(claimsPrincipal);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
