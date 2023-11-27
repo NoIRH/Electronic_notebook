@@ -1,9 +1,10 @@
 ﻿using ElNotebook.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
 namespace ElNotebook.Controllers
 {
-    public class AuthRegController
+    public class AuthRegController : Controller
     {
         public static User Authorize(string login, string password)
         {

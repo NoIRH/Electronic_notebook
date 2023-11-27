@@ -1,0 +1,39 @@
+﻿@model (List<Course>,List<Student>)
+@{
+    ViewData["Title"] = "Manager Page";
+}
+<div class="cources_box">
+    <h2>Список курсов</h2>
+    <table class="table">
+        <tr><th>Название курса</th><th>Количество часов</th> <th></th><th></th></tr>
+        @foreach (var item in Model.Item1)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CountOFhours</td>
+                <td>
+                    <a asp-action="EditCourse" asp-controller="Manager" asp-route-id="@item.Id">Изменить</a>
+                </td>
+                <td>
+                    <form asp-controller="Manager" asp-action="DeleteCourse" method="post" asp-route-id="@item.Id">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <p><a asp-action="CreateCourse">Добавить курс</a></p>
+</div>
+<div class="student_box">
+    <h2>Список студентов</h2>
+    <table class="table">
+        <tr><th>Имя</th><th>Номер группы</th></tr>
+        @foreach (var item in Model.Item2)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.NumberGroup</td>
+            </tr>
+        }
+    </table>
+</div>

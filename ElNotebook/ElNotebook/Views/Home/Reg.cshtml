@@ -1,0 +1,19 @@
+﻿@model User
+@{
+}
+<div>
+<h2>Регистрация</h2>
+<form asp-action="Reg" asp-controller="Home">
+    <p>
+        <label asp-for="Name">Логин</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Password">Автор курса</label><br />
+        <input type="text" asp-for="Password" />
+    </p>
+    <p>
+        <input type="submit" value="Зарегистриваться" />
+    </p>
+    </form>
+</div>
