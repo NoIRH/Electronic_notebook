@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GH/fonxs1qzs0qgd/5bp3UHdIl1zZzXvn9sV4miqhxaIBE/kB+oKSFKlbQK146/1GGaZEB/DqFcgE5F2QDQupg==",
+  "dgSpecHash": "wmHfzBY/BAuBidIvM+vTIAng9kvWFUwarACIlqCAajRaRZgFB66Gu0FcQH5h3n2TWqHFx4vghMSTl/tW6CNqew==",
   "success": true,
-  "projectFilePath": "D:\\MyApps\\C#\\ElBook\\ElNotebook\\ElNotebook\\ElNotebook.csproj",
+  "projectFilePath": "C:\\MyApps\\c#\\Electronic_notebook\\ElNotebook\\ElNotebook\\ElNotebook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\demin\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.13\\microsoft.data.sqlite.core.7.0.13.nupkg.sha512",
     "C:\\Users\\demin\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
