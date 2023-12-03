@@ -127,3 +127,4 @@ C:\MyApps\c#\Electronic_notebook\ElNotebook\ElNotebook\obj\Debug\net7.0\ElNotebo
 C:\MyApps\c#\Electronic_notebook\ElNotebook\ElNotebook\obj\Debug\net7.0\ElNotebook.genruntimeconfig.cache
 C:\MyApps\c#\Electronic_notebook\ElNotebook\ElNotebook\obj\Debug\net7.0\ref\ElNotebook.dll
 D:\MyApps\C#\ElBook\ElNotebook\ElNotebook\obj\Debug\net7.0\ElNotebook.sourcelink.json
+C:\MyApps\c#\Electronic_notebook\ElNotebook\ElNotebook\obj\Debug\net7.0\ElNotebook.sourcelink.json

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 using System.Security.Claims;
 
 namespace ElNotebook.Controllers
@@ -41,9 +42,17 @@ namespace ElNotebook.Controllers
 
             return View((cources, student));
         }
-        public IActionResult EditProfile(Student student)
+        public IActionResult EditProfile(int? id)
         {
-            return View(student);
+            var user = db.Users.FirstOrDefault(u => u.Id == id);
+            return View(user);
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditProfile(User user)
+        {
+            db.Users.Update(user);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
         public IActionResult SubscribeOnCourse() 
         {
