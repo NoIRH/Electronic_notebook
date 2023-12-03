@@ -1,0 +1,24 @@
+﻿@model (Course,List<Student>)
+@{
+    ViewData["Title"] = "Manager Page course students";
+
+}
+<div class="cources_box">
+    
+    <p>Название курса : @Model.Item1.Name</p>
+    <p><a asp-action="ShowAll">Показать все курсы</a></p>
+</div>
+<div class="student_box">
+    <h2>Список студентов</h2>
+    <table class="table">
+        <tr><th>Имя</th><th>Номер группы</th><th>Общее количество часов</th></tr>
+        @foreach (var item in Model.Item2)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.NumberGroup</td>
+                <td>@item.TotalCountOFhours</td>
+            </tr>
+        }
+    </table>
+</div>

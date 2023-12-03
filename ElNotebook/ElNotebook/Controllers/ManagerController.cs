@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ElNotebook.Controllers
 {
-   
+    [Authorize(Roles ="Manager,Admin")]
     public class ManagerController : Controller
     {
         private ApplicationContext db;
@@ -18,6 +18,16 @@ namespace ElNotebook.Controllers
             var cources = db.Courses.ToList();
             var students = db.Students.ToList();
             return View((cources,students));
+        }
+        public IActionResult ShowAll()
+        {
+            return Redirect("Index");
+        }
+        public IActionResult ShowCourseStudent(int? id)
+        {
+            var cource = db.Courses.Include(c => c.Students).FirstOrDefault(c => c.Id == id);
+            var students = cource?.Students;
+            return View((cource, students));
         }
         public IActionResult CreateCourse()
         {

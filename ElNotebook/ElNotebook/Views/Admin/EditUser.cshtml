@@ -1,11 +1,7 @@
 ﻿@model User
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+
 <div>
-    <form asp-action="EditProfile" asp-controller="Student">
+    <form asp-action="EditUser" asp-controller="Admin" asp-route-id="@Model.Id">
         <p>
             <label asp-for="Name">Логин</label><br />
             <input type="text" asp-for="Name" />
@@ -18,13 +14,10 @@
             <label asp-for="Email">Почта</label><br />
             <input type="text" asp-for="Email" />
         </p>
-        @if (User.FindFirst(ClaimTypes.Role)?.Value == Roletype.Admin.ToString())
-        {
-            <p>
-                <label asp-for="Role">Роль</label><br />
-                <select asp-for="Role" asp-items="@new SelectList(Enum.GetNames(typeof(Roletype)))"></select>
-            </p>
-        }
+        <p>
+            <label asp-for="Role">Роль</label><br />
+            <select asp-for="Role" asp-items="@new SelectList(Enum.GetNames(typeof(Roletype)))"></select>
+        </p>
         <p>
             <input type="submit" value="Изменить" />
         </p>

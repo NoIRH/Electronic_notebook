@@ -8,6 +8,10 @@
 <body>
     <h2>@ViewBag.Title</h2>
     <div><a href="/Home/Index">Home</a> |
+        @if (User.FindFirst(ClaimTypes.Role)?.Value == Roletype.Admin.ToString())
+        {
+            <a href="/Admin/Index">Личный кабинет</a>
+        }
         @if (User.FindFirst(ClaimTypes.Role)?.Value == Roletype.Manager.ToString())
         {
             <a href="/Manager/Index">Личный кабинет</a>

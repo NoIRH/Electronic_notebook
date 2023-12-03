@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyApps\\c#\\Electronic_notebook\\ElNotebook\\ElNotebook\\ElNotebook.csproj": {}
+    "D:\\MyApps\\C#\\ElBook\\ElNotebook\\ElNotebook\\ElNotebook.csproj": {}
   },
   "projects": {
-    "C:\\MyApps\\c#\\Electronic_notebook\\ElNotebook\\ElNotebook\\ElNotebook.csproj": {
+    "D:\\MyApps\\C#\\ElBook\\ElNotebook\\ElNotebook\\ElNotebook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyApps\\c#\\Electronic_notebook\\ElNotebook\\ElNotebook\\ElNotebook.csproj",
+        "projectUniqueName": "D:\\MyApps\\C#\\ElBook\\ElNotebook\\ElNotebook\\ElNotebook.csproj",
         "projectName": "ElNotebook",
-        "projectPath": "C:\\MyApps\\c#\\Electronic_notebook\\ElNotebook\\ElNotebook\\ElNotebook.csproj",
+        "projectPath": "D:\\MyApps\\C#\\ElBook\\ElNotebook\\ElNotebook\\ElNotebook.csproj",
         "packagesPath": "C:\\Users\\demin\\.nuget\\packages\\",
-        "outputPath": "C:\\MyApps\\c#\\Electronic_notebook\\ElNotebook\\ElNotebook\\obj\\",
+        "outputPath": "D:\\MyApps\\C#\\ElBook\\ElNotebook\\ElNotebook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

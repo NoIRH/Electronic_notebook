@@ -17,10 +17,10 @@
                    <a asp-action="CourseDetails" asp-controller="Student" asp-route-id="@item.Id">Детали</a>
                 </td>
                 <td>
-                        <a asp-action="SubscribeOnCourse" asp-controller="Student" asp-route-id="@item.Id">Подписаться</a>
+                     <a asp-action="SubscribeOnCourse" asp-controller="Student" asp-route-id="@item.Id">Подписаться</a>
                 </td>
                 <td>
-                        <a asp-action="UnSubscribeOnCourse" asp-controller="Student" asp-route-id="@item.Id">Отписаться</a>
+                     <a asp-action="UnSubscribeOnCourse" asp-controller="Student" asp-route-id="@item.Id">Отписаться</a>
                 </td>
             </tr>
         }
@@ -29,5 +29,8 @@
 <div class="student_box">
     здесь будут кнопки !)<br/>
     добро пожаловать уважаемый @Model.Item2?.Name <br/>
-    <a asp-action="EditProfile" asp-controller="Student" asp-route-id="@Model.Item2?.UserId">Редактировать профиль</a>
+    <a asp-action="EditUserProfile" asp-controller="Student" asp-route-id="@Model.Item2?.UserId">Редактировать профиль пользователя</a><br/>
+    <a asp-action="EditStudentProfile" asp-controller="Student" asp-route-id="@Model.Item2?.Id">Редактировать профиль студента</a><br/>
+    <a asp-action="ShowActiveCourse" asp-controller="Student">Показать активные курсы</a><br />
+    <a asp-action="ShowClosedCourse" asp-controller="Student">Показать законченные курсы</a><br />
 </div>

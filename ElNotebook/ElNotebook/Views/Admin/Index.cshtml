@@ -1,0 +1,33 @@
+﻿@model List<User>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="cources_box">
+    <h2>Список курсов</h2>
+    <table class="table">
+        <tr><th>Имя пользователя</th><th>Роль</th> <th></th><th></th><th></th></tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Role.ToString()</td>
+                <td>
+                    <a asp-action="EditUser" asp-controller="Admin" asp-route-id="@item.Id">Изменить</a>
+                </td>
+                <td>
+                    <form asp-controller="Admin" asp-action="DeleteUser" method="post" asp-route-id="@item.Id">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <a asp-action="AddUser" asp-controller="Admin">Добавить пользователя</a>
+</div>
+<div class="student_box">
+    здесь будут кнопки !) или не будут<br />
+    
+   
+</div>

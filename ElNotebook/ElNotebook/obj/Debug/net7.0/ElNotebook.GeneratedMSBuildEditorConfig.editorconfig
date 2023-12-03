@@ -9,75 +9,107 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ElNotebook
 build_property.RootNamespace = ElNotebook
-build_property.ProjectDir = C:\MyApps\c#\Electronic_notebook\ElNotebook\ElNotebook\
+build_property.ProjectDir = D:\MyApps\C#\ElBook\ElNotebook\ElNotebook\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\MyApps\c#\Electronic_notebook\ElNotebook\ElNotebook
+build_property.MSBuildProjectDirectory = D:\MyApps\C#\ElBook\ElNotebook\ElNotebook
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Home/AccessDenied.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Admin/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Home/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Home/Index.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Home/EditStudentProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0U3R1ZGVudFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Home/Login.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Home/Privacy.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Home/Reg.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Home/Reg.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Manager/CreateCourse.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Manager/CreateCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Manager/EditCourse.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Manager/EditCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxFZGl0Q291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Manager/Index.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Manager/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Shared/Error.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Manager/ShowCourseStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93Q291cnNlU3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Student/CourseDetails.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Student/CourseDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDb3Vyc2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Student/EditProfile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0UHJvZmlsZS5jc2h0bWw=
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Student/EditStudentProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0U3R1ZGVudFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Student/Index.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Student/EditUserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0VXNlclByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/_ViewImports.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Student/ShowActiveCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTaG93QWN0aXZlQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Student/ShowClosedCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTaG93Q2xvc2VkQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/_ViewStart.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyApps/c\#/Electronic_notebook/ElNotebook/ElNotebook/Views/Shared/_Layout.cshtml]
+[D:/MyApps/C\#/ElBook/ElNotebook/ElNotebook/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dacbtwuc39

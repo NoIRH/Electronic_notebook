@@ -6,7 +6,7 @@
 
 <div>
     <h2>Редактирвоание курса</h2>
-    <form asp-action="EditCourse" asp-controller="manager">
+    <form asp-action="EditCourse" asp-controller="manager" asp-route-id="@Model.Id">
         <p>
             <label asp-for="Name">Название курса</label><br />
             <input type="text" asp-for="Name" />
@@ -21,7 +21,7 @@
         </p>
         <p>
             <label asp-for="Description">Описание</label><br />
-            <input type="text" asp-for="Description" />
+            <textarea asp-for="Description"></textarea>
         </p>
         <p>
             <input type="submit" value="Изменить" />
