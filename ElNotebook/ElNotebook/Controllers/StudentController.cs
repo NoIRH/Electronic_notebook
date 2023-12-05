@@ -38,8 +38,7 @@ namespace ElNotebook.Controllers
         public IActionResult ShowClosedCourse()
         {
             var id = Convert.ToInt32(User.FindFirst(ClaimTypes.Surname)?.Value);
-            db.Students.Include(c => c.Courses);
-            var student = db.Students.ToList().Find(s => s.UserId == id);
+            var student = db.Students.Include(c => c.Courses).ToList().Find(s => s.UserId == id);
             var cources = student?.Activities.
                 Where(s => s.Activity == ActivityType.Closed).
                 Select(s => s.Course)
