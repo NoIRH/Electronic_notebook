@@ -1,2 +1,12 @@
 ElNotebook/.vs/
 ElNotebook/ElNotebook/obj/Debug/
+ElNotebook/ElNotebook/bin/Debug/net7.0/ElNotebook.dll
+ElNotebook/ElNotebook/bin/Debug/net7.0/ElNotebook.exe
+ElNotebook/ElNotebook/bin/Debug/net7.0/ElNotebook.pdb
+ElNotebook/ElNotebook/bin/Debug/net7.0/ElNotebook.staticwebassets.runtime.json
+ElNotebook/ElNotebook/obj/ElNotebook.csproj.nuget.dgspec.json
+ElNotebook/ElNotebook/obj/ElNotebook.csproj.nuget.g.props
+ElNotebook/ElNotebook/obj/project.assets.json
+ElNotebook/ElNotebook/obj/project.nuget.cache
+ElNotebook/ElNotebook/helloapp.db-shm
+ElNotebook/ElNotebook/helloapp.db-wal
