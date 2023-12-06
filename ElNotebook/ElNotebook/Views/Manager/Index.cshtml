@@ -31,13 +31,16 @@
 <div class="student_box">
     <h2>Список студентов</h2>
     <table class="table">
-        <tr><th>Имя</th><th>Номер группы</th><th>Общее количество часов</th></tr>
+        <tr><th>Имя</th><th>Номер группы</th><th>Общее количество часов</th><th></th></tr>
         @foreach (var item in Model.Item2)
         {
             <tr>
                 <td>@item.Name</td>
                 <td>@item.NumberGroup</td>
                 <td>@item.TotalCountOFhours</td>
+                <td>
+                    <a asp-action="StudentDetails" asp-controller="Student" asp-route-id="@item.Id">Детали</a>
+                </td>
             </tr>
         }
     </table>

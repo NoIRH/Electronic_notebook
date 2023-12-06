@@ -9,7 +9,6 @@ using System.Security.Claims;
 
 namespace ElNotebook.Controllers
 {
-    [Authorize(Roles = "Student")]
     public class StudentController : Controller
     {
         private ApplicationContext db;
@@ -17,6 +16,7 @@ namespace ElNotebook.Controllers
         {
             db = context;
         }
+        [Authorize(Roles = "Student")]
         public IActionResult Index()
         {
             var id = Convert.ToInt32(User.FindFirst(ClaimTypes.Surname)?.Value);
@@ -24,6 +24,7 @@ namespace ElNotebook.Controllers
             var student = db.Students.ToList().Find(s => s.UserId == id);
             return View((cources, student));
         }
+        [Authorize(Roles = "Student")]
         public IActionResult ShowActiveCourse()
         {
             var id = Convert.ToInt32(User.FindFirst(ClaimTypes.Surname)?.Value);
@@ -35,6 +36,7 @@ namespace ElNotebook.Controllers
                 .ToList();
             return View((cources, student));
         }
+        [Authorize(Roles = "Student")]
         public IActionResult ShowClosedCourse()
         {
             var id = Convert.ToInt32(User.FindFirst(ClaimTypes.Surname)?.Value);
@@ -45,20 +47,23 @@ namespace ElNotebook.Controllers
                 .ToList();
             return View((cources, student));
         }
+        [Authorize(Roles = "Student")]
         public IActionResult EditStudentProfile(int? id)
         {
-            var st = db.Students.FirstOrDefault(p => p.UserId == id);
+            var st = db.Students.FirstOrDefault(p => p.Id == id);
             if (st != null)
                 return View(st);
             return RedirectToAction("Index");
         }
         [HttpPost]
+        [Authorize(Roles = "Student")]
         public async Task<ActionResult> EditStudentProfile(Student student)
         {
             db.Students.Update(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Student")]
         public IActionResult EditUserProfile(int? id)
         {
             if (id != null)
@@ -69,6 +74,7 @@ namespace ElNotebook.Controllers
             return NotFound();
         }
         [HttpPost]
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> EditUserProfile(User user)
         {
             db.Users.Update(user);
@@ -85,6 +91,7 @@ namespace ElNotebook.Controllers
             await Request.HttpContext.SignInAsync(claimsPrincipal);
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Student")]
         public IActionResult SubscribeOnCourse(int? id) 
         {
             if (id != null)
@@ -116,6 +123,7 @@ namespace ElNotebook.Controllers
             }
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Student")]
         public IActionResult UnSubscribeOnCourse(int? id)
         {
             if (id != null)
@@ -143,12 +151,26 @@ namespace ElNotebook.Controllers
             }
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> CourseDetails(int? id)
         {
             if (id != null)
             {
                 Course? course = await db.Courses.FirstOrDefaultAsync(p => p.Id == id);
                 if (course != null) return View(course);
+            }
+            return NotFound();
+        }
+        [Authorize(Roles ="Student, Admin, Manager")]
+        public async Task<IActionResult> StudentDetails(int? id)
+        {
+            if (id != null)
+            {
+                db.Activities.Load();
+                db.Students.Load();
+                db.Courses.Load();
+                var st = await db.Students.Include(s => s.Activities).FirstOrDefaultAsync(p => p.Id == id);
+                if (st!= null) return View(st);
             }
             return NotFound();
         }
