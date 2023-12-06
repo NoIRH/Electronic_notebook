@@ -10,3 +10,4 @@ ElNotebook/ElNotebook/obj/project.assets.json
 ElNotebook/ElNotebook/obj/project.nuget.cache
 ElNotebook/ElNotebook/helloapp.db-shm
 ElNotebook/ElNotebook/helloapp.db-wal
+ElNotebook/ElNotebook/helloapp.db
