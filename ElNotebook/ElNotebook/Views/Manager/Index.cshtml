@@ -1,11 +1,12 @@
 ﻿@model (List<Course>,List<Student>)
 @{
     ViewData["Title"] = "Manager Page";
+
 }
 <div class="cources_box">
     <h2>Список курсов</h2>
     <table class="table">
-        <tr><th>Название курса</th><th>Количество часов</th> <th></th><th></th></tr>
+        <tr><th>Название курса</th><th>Количество часов</th> <th></th><th></th><th></th></tr>
         @foreach (var item in Model.Item1)
         {
             <tr>
@@ -19,6 +20,9 @@
                         <input type="submit" value="Удалить" />
                     </form>
                 </td>
+                <td>
+                    <a asp-action="ShowCourseStudent" asp-controller="Manager" asp-route-id="@item.Id">Студенты курса</a>
+                </td>
             </tr>
         }
     </table>
@@ -27,12 +31,16 @@
 <div class="student_box">
     <h2>Список студентов</h2>
     <table class="table">
-        <tr><th>Имя</th><th>Номер группы</th></tr>
+        <tr><th>Имя</th><th>Номер группы</th><th>Общее количество часов</th><th></th></tr>
         @foreach (var item in Model.Item2)
         {
             <tr>
                 <td>@item.Name</td>
                 <td>@item.NumberGroup</td>
+                <td>@item.TotalCountOFhours</td>
+                <td>
+                    <a asp-action="StudentDetails" asp-controller="Student" asp-route-id="@item.Id">Детали</a>
+                </td>
             </tr>
         }
     </table>

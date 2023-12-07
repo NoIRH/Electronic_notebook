@@ -1,0 +1,24 @@
+﻿@model Student
+@{
+    var activeCourses = Model.
+        Activities.
+        Where(a => a.Activity == ActivityType.Active).Select(a => a.Course);
+    var closedCourses = Model.
+            Activities.
+            Where(a => a.Activity == ActivityType.Closed).Select(a => a.Course);
+}
+<div>
+    <p> Имя студента: @Model.Name</p><br />
+    <p> Номер группы: @Model.NumberGroup</p><br />
+    <p> Общее количество часов: @Model.TotalCountOFhours</p><br />
+    <p>Активные курсы:</p>
+    @foreach (var course in activeCourses)
+    {
+        <p>@course?.Name</p> 
+    }
+    <p>Закрытые курсы:</p>
+    @foreach (var course in closedCourses)
+    {
+        <p>@course?.Name</p>
+    }
+</div>

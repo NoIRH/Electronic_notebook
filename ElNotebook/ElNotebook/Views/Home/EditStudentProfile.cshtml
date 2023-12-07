@@ -1,0 +1,19 @@
+﻿@model Student
+<div>
+    <form asp-action="EditStudentProfile" asp-controller="Home" asp-route-id="@Model.Id">
+        <p>
+            <label asp-for="Name">Имя</label><br />
+            <input type="text" asp-for="Name" />
+        </p>
+        <p>
+            <label asp-for="NumberGroup">Номер группы</label><br />
+            <input type="number" asp-for="NumberGroup" />
+        </p>
+        <p>
+            <input hidden type="number" asp-for="UserId" />
+        </p>
+        <p>
+            <input type="submit" value="Создать" />
+        </p>
+    </form>
+</div>

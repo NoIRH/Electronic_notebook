@@ -1,5 +1,6 @@
 ﻿using ElNotebook.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,10 +15,25 @@ namespace ElNotebook.Controllers
         public HomeController(ApplicationContext context)
         {
             db = context;
-
+            if (db.Users.Where(u => u.Role == Roletype.Admin).Count() == 0)
+            {
+                db.Users.Add(
+                    new User
+                    {
+                        Name = "admin",
+                        Password = "admin",
+                        Email = "admin",
+                        Role = Roletype.Admin,
+                    });
+                db.SaveChanges();
+            }
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult AccessDenied()
         {
             return View();
         }
@@ -29,20 +45,44 @@ namespace ElNotebook.Controllers
         {
             return View();
         }
+        public IActionResult EditStudentProfile()
+        {
+            var id = (int?)TempData["user_id"];
+            var st = db.Students.FirstOrDefault(p => p.UserId == id);
+            if (st != null) 
+                return View(st);
+            return RedirectToAction("Index");
+        }
         [HttpPost]
         public async Task<ActionResult> Reg(User user)
         {
-            var u = db.Users.Find(user.Id); 
-            if (u == null && user != null && user.Name != null && user.Password !=  null)
+            var u = db.Users.Find(user.Id);
+            Student st  = null;
+            var hasNameDuplicate = db.Users.Where(u => u.Name == user.Name).Count() != 0;
+            if (u == null && 
+                user != null && 
+                user.Name != null && 
+                user.Password !=  null &&
+                !hasNameDuplicate)
             {
                 user.Role = Roletype.Student;
                 db.Users.Add(user);
                 db.SaveChanges();
                 u = db.Users.Find(user.Id);
-                var st = new Student { Name = user.Name, UserId = u.Id };
+                st = new Student { Name = user.Name, UserId = u.Id };
                 db.Students.Add(st);
                 db.SaveChanges();
+                TempData["user_id"] = u.Id;
             }
+            if(st is not null)
+                 return RedirectToAction("EditStudentProfile", "Home");
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<ActionResult> EditStudentProfile(Student student)
+        {
+            db.Students.Update(student);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpPost]
@@ -72,6 +112,11 @@ namespace ElNotebook.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public async Task<ActionResult> Logout()
+        {
+            await Request.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index");
         }
     }
 }

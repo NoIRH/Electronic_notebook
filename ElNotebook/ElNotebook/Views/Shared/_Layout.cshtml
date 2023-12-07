@@ -7,7 +7,29 @@
 </head>
 <body>
     <h2>@ViewBag.Title</h2>
-    <div><a href="/Home/Index">Home</a> | <a href="/Manager/Index">Manager</a></div>
+    <div><a href="/Home/Index">Home</a> |
+        @if (User.FindFirst(ClaimTypes.Role)?.Value == Roletype.Admin.ToString())
+        {
+            <a href="/Admin/Index">Личный кабинет</a>
+        }
+        @if (User.FindFirst(ClaimTypes.Role)?.Value == Roletype.Manager.ToString())
+        {
+            <a href="/Manager/Index">Личный кабинет</a>
+        }
+        @if (User.FindFirst(ClaimTypes.Role)?.Value == Roletype.Student.ToString())
+        {
+            <a href="/Student/Index">Личный кабинет</a>
+        }
+        @if (User.FindFirst(ClaimTypes.Name) is null)
+        {
+            @: <a href="/Home/Login">Sign in</a>|
+            @: <a href="/Home/Reg"> Registration </a>|
+        }
+        @if (User.FindFirst(ClaimTypes.Name) is not null)
+        {
+            <a href="/Home/Logout">Sign out</a>
+        }
+    </div>
     <main>
         @RenderBody()
     </main>

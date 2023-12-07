@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ElNotebook.Controllers
 {
-   
+    [Authorize(Roles ="Manager,Admin")]
     public class ManagerController : Controller
     {
         private ApplicationContext db;
@@ -16,8 +16,61 @@ namespace ElNotebook.Controllers
         public  IActionResult Index()
         {
             var cources = db.Courses.ToList();
-            var students = db.Students.ToList();
+            var students = db.Students.Include(s => s.Activities).ToList();
             return View((cources,students));
+        }
+        public IActionResult ShowAll()
+        {
+            return Redirect("Index");
+        }
+        public IActionResult CloseCourse(int? courseId, int? studentId)
+        {
+            if (courseId != null)
+            {
+                Course? course =  db.Courses.
+                    Include(c => c.Students).
+                    FirstOrDefault(p => p.Id == courseId);
+                if (course != null && studentId !=  null)
+                {
+                    var a = course.Activities.FirstOrDefault(a => a.StudentId == studentId);
+                    if (a is not null)
+                    {
+                        a.Activity = ActivityType.Closed;
+                        db.Update(a);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            return RedirectToAction("ShowCourseStudent","Manager",new {id = courseId });
+        }
+        public IActionResult ActiveCourse(int? courseId, int? studentId)
+        {
+            if (courseId != null)
+            {
+                Course? course = db.Courses.
+                    Include(c => c.Students).
+                    FirstOrDefault(p => p.Id == courseId);
+                if (course != null && studentId != null)
+                {
+                    var a = course.Activities.FirstOrDefault(a => a.StudentId == studentId);
+                    if (a is not null)
+                    {
+                        a.Activity = ActivityType.Active;
+                        db.Update(a);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            return RedirectToAction("ShowCourseStudent", "Manager", new { id = courseId });
+        }
+        public IActionResult ShowCourseStudent(int? id)
+        {
+            db.Courses.Load();
+            var cource = db.Courses.Include(c =>c.Students).
+                ThenInclude(s => s.Activities).
+                FirstOrDefault(c => c.Id == id);
+            var students = cource?.Students;
+            return View((cource, students));
         }
         public IActionResult CreateCourse()
         {
