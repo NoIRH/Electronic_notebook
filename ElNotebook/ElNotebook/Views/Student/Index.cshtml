@@ -4,31 +4,34 @@
 *@
 @{
 }
-<div class="cources_box">
+<div class="cources_box-student text-style">
     <h2>Список курсов</h2>
-    <table class="table">
-        <tr><th>Название курса</th><th>Количество часов</th> <th></th><th></th><th></th></tr>
+    <table class="table-style">
+        <tr class="text-style">
+            <th class="text-style">Название курса</th>
+            <th class="text-style">Количество часов</th>
+        </tr>
         @foreach (var item in Model.Item1)
         {
             <tr>
-                <td>@item.Name</td>
-                <td>@item.CountOFhours</td>
-                <td>
+                <td class="td-table-style">@item.Name</td>
+                <td class="td-table-style">@item.CountOFhours</td>
+                <td class="td-table-style">
                    <a asp-action="CourseDetails" asp-controller="Student" asp-route-id="@item.Id">Детали</a>
                 </td>
-                <td>
+                <td class="td-table-style">
                      <a asp-action="SubscribeOnCourse" asp-controller="Student" asp-route-id="@item.Id">Подписаться</a>
                 </td>
-                <td>
+                <td class="td-table-style">
                      <a asp-action="UnSubscribeOnCourse" asp-controller="Student" asp-route-id="@item.Id">Отписаться</a>
                 </td>
             </tr>
         }
     </table>
 </div>
-<div class="student_box">
-    здесь будут кнопки !)<br/>
-    добро пожаловать уважаемый @Model.Item2?.Name <br/>
+<div class="student_box text-style">
+ 
+    <br>Добро пожаловать уважаемый @Model.Item2?.Name<br />
     <a asp-action="EditUserProfile" asp-controller="Student" asp-route-id="@Model.Item2?.UserId">Редактировать профиль пользователя</a><br/>
     <a asp-action="EditStudentProfile" asp-controller="Student" asp-route-id="@Model.Item2?.Id">Редактировать профиль студента</a><br/>
     <a asp-action="ShowActiveCourse" asp-controller="Student">Показать активные курсы</a><br />

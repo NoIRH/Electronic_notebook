@@ -3,26 +3,30 @@
     ViewData["Title"] = "Manager Page course students";
 
 }
-<div class="cources_box">
+<div class="cources_box-student text-style">
     
     <p>Название курса : @Model.Item1.Name</p>
     <p><a asp-action="ShowAll">Показать все курсы</a></p>
 </div>
-<div class="student_box">
+<div class="student_box text-style">
     <h2>Список студентов</h2>
-    <table class="table">
-        <tr><th>Имя</th><th>Номер группы</th><th>Общее количество часов</th><th></th><th></th></tr>
+    <table class="table-style">
+        <tr class="text-style">
+            <th class="text-style">Имя</th>
+            <th class="text-style">Номер группы</th>
+            <th class="text-style">Общее количество часов</th>
+        </tr>
         @foreach (var item in Model.Item2)
         {
             <tr>
-                <td>@item.Name</td>
-                <td>@item.NumberGroup</td>
-                <td>@item.TotalCountOFhours</td>
+                <td class="td-table-style">@item.Name</td>
+                <td class="td-table-style">@item.NumberGroup</td>
+                <td class="td-table-style">@item.TotalCountOFhours</td>
                 @if(item.Activities.
                 Where(a => a.Course?.Id == Model.Item1.Id && a.Activity == ActivityType.Active).
                 Count() == 1)
                 {
-                    <td>
+                    <td class="td-table-style">
                         <a asp-action="CloseCourse" asp-route-courseId="@Model.Item1.Id" asp-route-studentId ="@item.Id"> Завершить курс</a>
                     </td>
                     <td>Активен</td>
@@ -31,8 +35,8 @@
                 Where(a => a.Course?.Id == Model.Item1.Id && a.Activity == ActivityType.Closed).
                 Count() == 1)
                 {
-                    <td><a asp-action="ActiveCourse" asp-route-courseId="@Model.Item1.Id" asp-route-studentId="@item.Id">Активировать курс</a></td>
-                    <td>Завершен</td>
+                    <td class="td-table-style"><a asp-action="ActiveCourse" asp-route-courseId="@Model.Item1.Id" asp-route-studentId="@item.Id">Активировать курс</a></td>
+                    <td class="td-table-style">Завершен</td>
                 }
                 
             </tr>
