@@ -1,25 +1,25 @@
 ﻿@model User
 
 <div>
-    <form asp-action="AddUser" asp-controller="Admin">
-        <p>
-            <label asp-for="Name">Логин</label><br />
+    <form asp-action="AddUser" asp-controller="Admin" class="main-form">
+        <p class="main-form">
+            <label asp-for="Name" class="font-style">Логин</label><br />
             <input type="text" asp-for="Name" />
         </p>
-        <p>
+        <p class ="main-form">
             <label asp-for="Password">Пароль</label><br />
             <input type="text" asp-for="Password" />
         </p>
-        <p>
+        <p class="main-form">
             <label asp-for="Email">Почта</label><br />
             <input type="text" asp-for="Email" />
         </p>
-        <p>
+        <p class="main-form">
             <label  asp-for="Role">Роль</label><br />
             <select asp-for="Role" asp-items="@new SelectList(Enum.GetNames(typeof(Roletype)))"></select>
         </p>
         <p>
-            <input type="submit" value="Добавить пользователя" />
+            <input type="submit" class="button-style" value="Добавить пользователя" />
         </p>
     </form>
 </div>
